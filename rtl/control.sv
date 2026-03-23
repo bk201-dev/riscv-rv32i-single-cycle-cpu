@@ -1,10 +1,9 @@
-// --------------------------------------------------------
-// Control Unit - RTL (Aligned with refined risc_pkg)
+// -------------------------------------------------------
+// Control Unit RTL
 // --------------------------------------------------------
 import risc_pkg::*;
 
 module control (
-  // Instruction type flags
   input  logic       r_type,
   input  logic       i_type,
   input  logic       s_type,
@@ -12,12 +11,10 @@ module control (
   input  logic       u_type,
   input  logic       j_type,
 
-  // Instruction fields
   input  logic [2:0] funct3,
   input  logic [6:0] funct7,
   input  logic [6:0] opcode,
 
-  // Outputs
   output logic        pc_sel,
   output logic        op1_sel,
   output logic        op2_sel,
@@ -42,7 +39,7 @@ assign funct7_bit5 = funct7[5];
 control_t ctrl_r, ctrl_i, ctrl_s, ctrl_b, ctrl_u, ctrl_j, ctrl;
 
 // ------------------------------------------------------------
-// R-Type Control
+// R-Type 
 // ------------------------------------------------------------
 assign funct_r = {funct7_bit5, funct3};
 
@@ -66,7 +63,7 @@ end
 
 
 // ------------------------------------------------------------
-// I-Type Control
+// I-Type 
 // ------------------------------------------------------------
 
 assign opcode_i = {opcode[4], funct3};
@@ -103,7 +100,7 @@ end
 
 
 // ------------------------------------------------------------
-// S-Type Control
+// S-Type 
 // ------------------------------------------------------------
 always_comb begin
     ctrl_s = '0;
@@ -119,8 +116,8 @@ always_comb begin
 end
 
 // ------------------------------------------------------------
-// B-Type Control
-// ------------------------------------------------------------
+// B-Type 
+// -----------------------------------------------------------
 always_comb begin
     ctrl_b = '0;
     ctrl_b.alu_src_a_select = 1'b1;
@@ -130,7 +127,7 @@ end
 
 
 // ------------------------------------------------------------
-// U-Type Control
+// U-Type 
 // ------------------------------------------------------------
 always_comb begin
     ctrl_u = '0;
@@ -149,7 +146,7 @@ always_comb begin
 end
 
 // ------------------------------------------------------------
-// J-Type Control
+// J-Type
 // ------------------------------------------------------------
 always_comb begin
     ctrl_j = '0;
@@ -162,7 +159,7 @@ end
 
 
 // ---------------------------------------------------------------------
-// Final Control Selection
+// Control Selection
 // ---------------------------------------------------------------------
 always_comb begin
     ctrl = '0;
