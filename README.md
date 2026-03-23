@@ -114,13 +114,6 @@ vsim -do run.do
 
 ---
 
-### Maximum Value Program (MIPS-style example)
-
-> Add your waveform or result image here
-
-![Max Program Simulation](docs/max_program_waveform.png)
-
----
 
 ## 💻 Programs Executed
 
