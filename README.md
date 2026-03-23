@@ -3,7 +3,11 @@
 ![Design](https://img.shields.io/badge/Architecture-Single--Cycle-orange)
 ![Simulation](https://img.shields.io/badge/Tool-ModelSim-red)
 ![License](https://img.shields.io/badge/License-MIT-lightgrey)
-# RISC-V RV32I Single-Cycle CPU (SystemVerilog)
+
+<h1 align="center">RISC-V RV32I Single-Cycle CPU (SystemVerilog)</h1>
+<p align="center">
+  SystemVerilog Implementation of a 32-bit RISC-V Processor
+</p>
 
 A complete implementation of a **32-bit RISC-V (RV32I) single-cycle processor** written in SystemVerilog.
 This project demonstrates the full design flow of a CPU — from instruction decoding to executing real programs on custom hardware.
@@ -74,7 +78,9 @@ All shared definitions (opcodes, ALU operations, control signals) are centralize
 
 > Add your architecture diagram here
 
-![CPU Architecture](docs/architecture.png)
+<p align="center">
+  <img src="docs/architecture.png" width="600"/>
+</p>
 
 ---
 
@@ -115,7 +121,11 @@ vsim -do run.do
 
 > Add your waveform screenshot here
 
-![Fibonacci Simulation](docs/fibonacci_waveform.png)
+
+<p align="center">
+  <img src="docs/fibonacci_waveform.png" width="600"/>
+</p>
+
 
 ---
 
