@@ -69,7 +69,7 @@ All shared definitions (opcodes, ALU operations, control signals) are centralize
 
 > Add your architecture diagram here
 
-![CPU Architecture](docs/architecture.png)
+![CPU Architecture](docs/CPU Architecture.png)
 
 ---
 
