@@ -1,22 +1,16 @@
 // --------------------------------------------------------
-// Branch Control - RTL (Refined)
+// Branch Control RTL
 // --------------------------------------------------------
 import risc_pkg::*;
 
 module branch_control (
-  // Operands to compare
   input  logic [31:0] opr_a,
   input  logic [31:0] opr_b,
-
-  // Branch instruction info
   input  logic        is_b_type,
   input  logic [2:0]  funct3,
-
-  // Result: branch taken?
   output logic        branch_taken
 );
  
-  // Signed interpretations
   logic signed [31:0] a_signed, b_signed;
   assign a_signed = opr_a;
   assign b_signed = opr_b;
