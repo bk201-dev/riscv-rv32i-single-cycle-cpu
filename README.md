@@ -1,3 +1,8 @@
+![SystemVerilog](https://img.shields.io/badge/Language-SystemVerilog-blue)
+![Architecture](https://img.shields.io/badge/CPU-RV32I-green)
+![Design](https://img.shields.io/badge/Architecture-Single--Cycle-orange)
+![Simulation](https://img.shields.io/badge/Tool-ModelSim-red)
+![License](https://img.shields.io/badge/License-MIT-lightgrey)
 # RISC-V RV32I Single-Cycle CPU (SystemVerilog)
 
 A complete implementation of a **32-bit RISC-V (RV32I) single-cycle processor** written in SystemVerilog.
