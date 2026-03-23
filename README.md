@@ -76,7 +76,7 @@ All shared definitions (opcodes, ALU operations, control signals) are centralize
 
 ## 🖼️ CPU Datapath
 
-> Add your architecture diagram here
+
 
 <p align="center">
   <img src="docs/architecture.png" width="600"/>
@@ -119,7 +119,7 @@ vsim -do run.do
 
 ### Fibonacci Program Execution
 
-> Add your waveform screenshot here
+
 
 
 <p align="center">
