@@ -1,12 +1,12 @@
 // --------------------------------------------------------
-// Decode - RTL (Refined)
+// Decode 
 // --------------------------------------------------------
 import risc_pkg::*;
 
 module decode(
-  input  logic [31:0]  instruction,  // 32-bit instruction from IF stage
+  input  logic [31:0]  instruction,  
 
-  // Decoded fields
+  
   output logic [4:0]   rs1_addr,
   output logic [4:0]   rs2_addr,
   output logic [4:0]   rd_addr,
@@ -19,7 +19,7 @@ module decode(
   output logic         b_type,
   output logic         u_type,
   output logic         j_type,
-  output logic [31:0]  immediate         // Final immediate value
+  output logic [31:0]  immediate         
 );
 
 // -----------------------------------------------------
@@ -32,7 +32,7 @@ logic [31:0] imm_u_type;
 logic [31:0] imm_j_type;
 
 // -----------------------------------------------------
-// Extract base fields from instruction
+// Extracting base field
 // -----------------------------------------------------
 assign opcode   = instruction[6:0];
 assign rd_addr  = instruction[11:7];
@@ -42,7 +42,7 @@ assign rs2_addr = instruction[24:20];
 assign funct7   = instruction[31:25];
 
 // ---------------------------------------------------------------
-// Immediate extractions for various instruction types
+// Immediate 
 // ---------------------------------------------------------------
 assign imm_i_type = {{20{instruction[31]}}, instruction[31:20]};
 assign imm_s_type = {{21{instruction[31]}}, instruction[30:25], instruction[11:7]};
@@ -51,7 +51,7 @@ assign imm_u_type = {instruction[31:12], 12'b0};
 assign imm_j_type = {{12{instruction[31]}}, instruction[19:12], instruction[20], instruction[30:21], 1'b0};
 
 // ---------------------------------------------------------------
-// Instruction type detection (by opcode)
+// Instruction type 
 // ---------------------------------------------------------------
 always_comb begin
     r_type = 1'b0;
@@ -75,7 +75,7 @@ always_comb begin
 end
 
 // ---------------------------------------------------------------
-// Final immediate selection
+// immediate selection
 // ---------------------------------------------------------------
 assign immediate = r_type ? 32'd0 :
                    i_type ? imm_i_type :
